@@ -1,0 +1,1715 @@
+
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Product Offering Qualification API is one of Pre-Ordering Management API Family. Product Offering Qualification API goal is to provide Product Offering commercial eligibility. This API allows to \n•\trequest a specific productOffering eligibility\n•\tlook for productOffering eligibles (ot not) from a product category\n•\tlook for productOffering eligibles (or not) from a productspec description.\nBecause the API allows describing product from the inventory, it is also possible to use it to retrieve productOffering available to complete existing product.",
+    "version": "2.0.0_inProgress",
+    "title": "API ProductOfferingQualification",
+    "x-logo": {
+      "url": "/redoc/logo.png",
+      "backgroundColor": "#FFFFFF"
+    }
+  },
+  
+  "host": "serverRoot",
+  "basePath":	"/tmf-api/productOfferingQualificationManagement/v1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json;charset=utf-8"
+  ],
+  "produces": [
+    "application/json;charset=utf-8"
+  ],
+  "tags": [
+  
+    {
+      "name": "ProductOfferingQualification",
+      "description": ""
+    },
+    {
+      "name": "Hub",
+      "description": ""
+    }
+  ],
+  "paths": {
+      "/productOfferingQualification": {
+      "post": {
+        "tags": [
+           "ProductOfferingQualification"
+        ],        
+        "operationId": "productOfferingQualificationCreate",
+        "summary": "create productOfferingQualification",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "ProductOfferingQualification",
+            "required": true,
+            "in": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/POST_REQ_ProductOfferingQualification"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ProductOfferingQualification"
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+           "ProductOfferingQualification"
+        ],        
+        "operationId": "productOfferingQualificationFind",
+        "summary": "find productOfferingQualification",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "fields",
+            "required": false,
+            "in": "query",
+            "description": "",
+            
+              "type": "string"
+          },
+          {
+            "name": "offset",
+            "required": false,
+            "in": "query",
+            "description": "Requested index for start of resources to be provided in response requested by client",
+            
+              "type": "string"
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "description": "Requested number of resources to be provided in response requested by client",
+            
+              "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+              "$ref": "#/definitions/ProductOfferingQualification"
+              }
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      }
+    },
+      "/productOfferingQualification/{productOfferingQualificationId}": {
+      "get": {
+        "tags": [
+           "ProductOfferingQualification"
+        ],        
+        "operationId": "productOfferingQualificationGet",
+        "summary": "get productOfferingQualification",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "productOfferingQualificationId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ProductOfferingQualification"
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+           "ProductOfferingQualification"
+        ],        
+        "operationId": "productOfferingQualificationPatch",
+        "summary": "patch productOfferingQualification",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "productOfferingQualificationId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "ProductOfferingQualification",
+            "required": true,
+            "in": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProductOfferingQualification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ProductOfferingQualification"
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+           "ProductOfferingQualification"
+        ],        
+        "operationId": "productOfferingQualificationDelete",
+        "summary": "delete productOfferingQualification",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "productOfferingQualificationId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      }
+    },
+      "/hub": {
+      "post": {
+        "tags": [
+           "Hub"
+        ],        
+        "operationId": "hubCreate",
+        "summary": "create hub",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "hub",
+            "required": true,
+            "in": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Hub"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Hub"
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+           "Hub"
+        ],        
+        "operationId": "hubFind",
+        "summary": "find hub",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+              "$ref": "#/definitions/Hub"
+              }
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      }
+    },
+      "/hub/{hubId}": {
+      "get": {
+        "tags": [
+           "Hub"
+        ],        
+        "operationId": "hubGet",
+        "summary": "get hub",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "hubId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Hub"
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+           "Hub"
+        ],        
+        "operationId": "hubPatch",
+        "summary": "patch hub",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "hubId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "hub",
+            "required": true,
+            "in": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Hub"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Hub"
+            }
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+           "Hub"
+        ],        
+        "operationId": "hubDelete",
+        "summary": "delete hub",
+        "description": "\n\nSpecific business errors for current operation will be encapsulated in\n\nHTTP Response 422 Unprocessable entity\n",
+        "deprecated": false,
+        
+        "parameters": [
+          
+          {
+            "name": "hubId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+
+          },
+          "400": {
+            
+            "description": "Bad Request\n\nList of supported error codes:\n- 20: Invalid URL parameter value\n- 21: Missing body\n- 22: Invalid body\n- 23: Missing body field\n- 24: Invalid body field\n- 25: Missing header\n- 26: Invalid header value\n- 27: Missing query-string parameter\n- 28: Invalid query-string parameter value",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "401": {
+            
+            "description": "Unauthorized\n\nList of supported error codes:\n- 40: Missing credentials\n- 41: Invalid credentials\n- 42: Expired credentials",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "403": {
+            
+            "description": "Forbidden\n\nList of supported error codes:\n- 50: Access denied\n- 51: Forbidden requester\n- 52: Forbidden user\n- 53: Too many requests",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "404": {
+            
+            "description": "Not Found\n\nList of supported error codes:\n- 60: Resource not found",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "422": {
+            
+            "description": "Unprocessable entity\n\nFunctional error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "500": {
+            
+            "description": "Internal Server Error\n\nList of supported error codes:\n- 1: Internal error",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          },
+          "503": {
+            
+            "description": "Service Unavailable\n\nList of supported error codes:\n- 5: The service is temporarily unavailable\n- 6: Orange API is over capacity, retry later !",
+            "schema": {
+            
+              "$ref": "#/definitions/ErrorRepresentation"
+            }
+          }
+        }
+      }
+    }
+  },
+"definitions": {
+  
+
+    "ErrorRepresentation": {
+      "description": "Error representation",
+
+      
+      "required": [
+          
+            "code",
+            "reason"
+      ],
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+              "type": "integer",
+              "format": "int32"
+        },
+        "reason": {
+          "description": "",
+              "type": "string"
+        },
+        "message": {
+          "description": "",
+              "type": "string"
+        },
+        "status": {
+          "description": "",
+              "type": "string"
+        },
+        "referenceError": {
+          "description": "",
+              "type": "string"
+        },
+        "@type": {
+          "description": "",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "ChannelRef": {
+      "description": "The channel defines the channel for selling product offerings.",
+
+      
+      "required": [
+          
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the channel",
+              "type": "string"
+        },
+        "href": {
+          "description": "Reference of the channel",
+              "type": "string"
+        },
+        "name": {
+          "description": "Name of the channel.",
+              "type": "string"
+        },
+        "@type": {
+          "description": "Indicates the (class) type of channel",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "ProductOfferingRef": {
+      "description": "A product offering represents entities that are orderable from the provider of the catalog, this resource includes pricing information.",
+
+      
+      "required": [
+          
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the product offering.",
+              "type": "string"
+        },
+        "href": {
+          "description": "Reference of the product offering.",
+              "type": "string"
+        },
+        "name": {
+          "description": "Name of the product offering.",
+              "type": "string"
+        },
+        "@referredType": {
+          "description": "Indicate the class (type) of product offering",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "ProductSpecificationRef": {
+      "description": "A ProductSpecification is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role.",
+
+      
+      "required": [
+          
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the product specification",
+              "type": "string"
+        },
+        "href": {
+          "description": "Reference of the product specification",
+              "type": "string"
+        },
+        "version": {
+          "description": "Version of the product specification",
+              "type": "string"
+        },
+        "name": {
+          "description": "Name of the product specification",
+              "type": "string"
+        },
+        "@referredType": {
+          "description": "",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "ProductCharacteristic": {
+      "description": "Characteristics of the product to instantiate or to modify",
+
+      
+      "required": [
+          
+            "name"
+      ],
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the characteristic",
+              "type": "string"
+        },
+        "value": {
+          "description": "Value of the characteristic",
+              "type": "string"
+        },
+        "@type": {
+          "description": "Indicates the (class) type of resource",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "This field provided a link to the schema describing this REST resource.",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "Place": {
+      "description": "Describe a place (using either geographicAddress or GeographicLocation) and/or identify an existing place (either an existing geographicAddress or existing GeographicLocation or existing GeographicSite) through its id.",
+
+      
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Must be a geographicAddress id or GeographicLocation id or GeographicSite id",
+              "type": "string"
+        },
+        "href": {
+          "description": "Href of a place",
+              "type": "string"
+        },
+        "name": {
+          "description": "Name of the place",
+              "type": "string"
+        },
+        "role": {
+          "description": "Role of the place - could be' installation place' for example",
+              "type": "string"
+        },
+        "@referredType": {
+          "description": "Indicates the (class) type of place",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "A link to the schema describing this REST resource.",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "QualificationItemRelationship": {
+      "description": "Used to describe link(s) to other items to the one qualified.",
+
+      
+      "required": [
+          
+            "type",
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Type of relationship (ex: reliesOn, connectedTo, etc...).",
+              "type": "string"
+        },
+        "id": {
+          "description": "Id of the ProductOfferingQualificationItem (from the same ProductOfferingQualificationItem).",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "CategoryRef": {
+      "description": "The category resource is used to group product offerings, service and resource candidates in logical containers. Categories can contain other categories and/or product offerings, resource or service candidates.",
+
+      
+      "required": [
+          
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the category",
+              "type": "string"
+        },
+        "href": {
+          "description": "Unique reference of the category",
+              "type": "string"
+        },
+        "version": {
+          "description": "Category Version",
+              "type": "string"
+        },
+        "name": {
+          "description": "Name of the category.",
+              "type": "string"
+        },
+        "@referredType": {
+          "description": "",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "TerminationError": {
+      "description": "If the qualifcationItem has not been done properly we indicate there the termination error(s).",
+
+      
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the termination error",
+              "type": "string"
+        },
+        "value": {
+          "description": "Text to describe the termination error (Unable to proceed to qualification because incomplete information provided).",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "RelatedPartyRef": {
+      "description": "A related party defines party or party role linked to a specific entity.",
+
+      
+      "required": [
+          
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of a related party",
+              "type": "string"
+        },
+        "href": {
+          "description": "Reference of the related party, could be a party reference or a party role reference.",
+              "type": "string"
+        },
+        "role": {
+          "description": "Role of the related party.",
+              "type": "string"
+        },
+        "name": {
+          "description": "Name of the related party.",
+              "type": "string"
+        },
+        "@referredType": {
+          "description": "Indicates the base (class) type of the party.",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "EligibilityUnavailabilityReason": {
+      "description": "Reason for eligibility result if the productOfferingQualification result is no (meaning the productOffering or productSpec is not available).",
+
+      
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Unavailability reason code",
+              "type": "string"
+        },
+        "label": {
+          "description": "Unavailability reason label",
+              "type": "string"
+        },
+        "@type": {
+          "description": "Indicates the (class) type of the unavailability reason",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "A link to the schema describing this REST resource",
+              "type": "string"
+        }
+      }
+      
+    },
+
+    "AlternateProductOfferingProposal": {
+      "description": "Alternate product Offering proposal is used when the requested product offering is not available with characteristic and date asked for. An alternate proposal could be a distinct product offering or product Spec close to requested one or same as requested but with a different activation date.",
+
+      
+      "required": [
+          
+            "id",
+            "alternateActivationDate"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Identifier of a alternate product offering proposal.",
+              "type": "string"
+        },
+        "alternateActivationDate": {
+          "description": "Alternate activation date in case seller is not able to meet requested expected activation date.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "@type": {
+          "description": "Indicates the (class) type of alternate product offering proposal.",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "A link to the schema describing this REST resource",
+              "type": "string"
+        },
+        "alternateProductSpecification": {
+          "description": "A ProductSpecification is a detailed description of a tangible or intangible object made available externally in the form of a ProductOffering to customers or other parties playing a party role.",
+          "type": "array",
+          "items": {
+              "type": "string"
+          }
+        },
+        "alternateProductOffering": {
+          "description": "A product offering represents entities that are orderable from the provider of the catalog, this resource includes pricing information.",
+          "type": "array",
+          "items": {
+              "type": "string"
+          }
+        }
+      }
+      
+    },
+
+    "Product": {
+      "description": "Configure the product characteristics (only configurable characteristics and necessary only if a non default value is selected) and/or identify the product that needs to be modified/deleted.",
+
+      
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the product",
+              "type": "string"
+        },
+        "href": {
+          "description": "Reference of the product.",
+              "type": "string"
+        },
+        "name": {
+          "description": "Name of the product.",
+              "type": "string"
+        },
+        "place": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/Place"
+          }
+        },
+        "productRelationship": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/ProductRelationship"
+          }
+        },
+        "characteristic": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/ProductCharacteristic"
+          }
+        },
+        "relatedParty": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/RelatedPartyRef"
+          }
+        },
+        "productSpecification": {
+          
+              "$ref": "#/definitions/ProductSpecificationRef"
+        }
+      }
+      
+    },
+
+    "ProductRelationship": {
+      "description": "Used to describe link(s) to product(s) to the one qualified.",
+
+      
+      "required": [
+          
+            "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Type of the product relationship. It can be :\n\n     - \"bundled\" if the product is a bundle and you want to describe the 'bundled' products inside this bundle\n     -  'reliesOn' if the product needs another already owned product to rely on (e.g. an option on an already owned mobile access product)\n\n'targets' or 'isTargete' (depending on the way of expressing the link) for any other kind of links that may be useful.",
+              "type": "string"
+        },
+        "productRefOrValue": {
+          
+              "$ref": "#/definitions/Product"
+        }
+      }
+      
+    },
+
+    "ProductOfferingQualificationItem": {
+      "description": "An item of a productOfferingQualification.",
+
+      
+      "required": [
+          
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id of the productOfferingQualification item.",
+              "type": "string"
+        },
+        "state": {
+          "description": "State of the productOfferingQualification item (acknowledged, inProgress, terminatedWithError, done).",
+              "type": "string"
+        },
+        "expectedActivationDate": {
+          "description": "Date when the requester look for productOfferingQualification activation.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "qualificationItemResult": {
+          "description": "Qualification result for this productOfferingQualification item. It could be:\n\n     -  qualified (request productOffering or productSpecification are available), \n     - unqualified (requested not available and not alternate available),\n     - alternate (requested not available but proposal available)",
+              "type": "string"
+        },
+        "@type": {
+          "description": "Indicates the (class) type of the productOfferingQualificationItem.",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "Link to schema describing this REST resource.",
+              "type": "string"
+        },
+        "eligibilityUnavailabilityReason": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/EligibilityUnavailabilityReason"
+          }
+        },
+        "category": {
+          
+              "$ref": "#/definitions/CategoryRef"
+        },
+        "qualificationItemRelationship": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/QualificationItemRelationship"
+          }
+        },
+        "product": {
+          
+              "$ref": "#/definitions/Product"
+        },
+        "productOffering": {
+          
+              "$ref": "#/definitions/ProductOfferingRef"
+        },
+        "terminationError": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/TerminationError"
+          }
+        },
+        "alternateProductOfferingProposal": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/AlternateProductOfferingProposal"
+          }
+        }
+      }
+      
+    },
+
+    "POST_REQ_ProductOfferingQualificationItem": {
+      "description": "",
+
+      
+      "required": [
+          
+            "id"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id of the productOfferingQualification item.",
+              "type": "string"
+        },
+        "expectedActivationDate": {
+          "description": "Date when the requester look for productOfferingQualification activation.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "@type": {
+          "description": "Indicates the (class) type of the productOfferingQualificationItem.",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "Link to schema describing this REST resource.",
+              "type": "string"
+        },
+        "category": {
+          
+              "$ref": "#/definitions/CategoryRef"
+        },
+        "qualificationItemRelationship": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/QualificationItemRelationship"
+          }
+        },
+        "product": {
+          
+              "$ref": "#/definitions/Product"
+        },
+        "productOffering": {
+          
+              "$ref": "#/definitions/ProductOfferingRef"
+        }
+      }
+      
+    },
+
+    "ProductOfferingQualification": {
+      "description": "ProductOfferingQualification is used to perform a commercial eligibility. It allows to retrieve a list of productOffering that are commercially available in the context of the interaction (defined be place, channel, party, product).",
+
+      
+      "required": [
+          
+            "relatedParty",
+            "productOfferingQualificationItem"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the productOfferingQualification resource.",
+              "type": "string"
+        },
+        "href": {
+          "description": "Hyperlink to access the productOfferingQualification",
+              "type": "string"
+        },
+        "productOfferingQualificationDateTime": {
+          "description": "Date when the productOfferingQualification has been submitted.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "description": {
+          "description": "Description of the productOfferingQualifcation",
+              "type": "string"
+        },
+        "state": {
+          "description": "State of the productOfferingQualification (acknowledged, inProgress, terminatedWithError, done).",
+              "type": "string"
+        },
+        "qualificationResult": {
+          "description": "Qualification result for this productOfferingQualification. It could be:\n-  qualified (all qualification item are qualified), - alternate (At least one item alternate and no item with unqualified) ,\n- unqualified (At least one item unqualified)",
+              "type": "string"
+        },
+        "expectedQualificationDate": {
+          "description": "Deadline date when the requester expected a qualification answer.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "estimatedResponseDate": {
+          "description": "Date when the requester expect to provide an answer for the qualification request.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "effectiveQualificationDate": {
+          "description": "Effective date to productOfferingQualification completion.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "expirationDate": {
+          "description": "Date the qualification response expires",
+              "type": "string",
+              "format": "date-time"
+        },
+        "provideAlternative": {
+          "description": "An indicator which when the value is \"true\" means that alternative solutions should be provided.",
+              "type": "boolean"
+        },
+        "provideOnlyAvailable": {
+          "description": "An indicator which when the value is \"true\" means that only available product offering must be listed in the response.",
+              "type": "boolean"
+        },
+        "provideUnavailabilityReason": {
+          "description": "An indicator which when the value is \"true\" means that unavailability reason are expected for non available product offering.",
+              "type": "string"
+        },
+        "@baseType": {
+          "description": "Indicates the base type of the resource. Here can be 'ProductOfferingQualification'.",
+              "type": "string"
+        },
+        "@type": {
+          "description": "Indicates the type of resource. Here can be 'ProductOfferingQualification'.",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "Link to schema describing this REST resource",
+              "type": "string"
+        },
+        "relatedParty": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/RelatedPartyRef"
+          }
+        },
+        "channel": {
+          
+              "$ref": "#/definitions/ChannelRef"
+        },
+        "productOfferingQualificationItem": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/ProductOfferingQualificationItem"
+          }
+        }
+      }
+      
+    },
+
+    "POST_REQ_ProductOfferingQualification": {
+      "description": "",
+
+      
+      "required": [
+          
+            "relatedParty",
+            "productOfferingQualificationItem"
+      ],
+      "type": "object",
+      "properties": {
+        "description": {
+          "description": "Description of the productOfferingQualifcation",
+              "type": "string"
+        },
+        "expectedQualificationDate": {
+          "description": "Deadline date when the requester expected a qualification answer.",
+              "type": "string",
+              "format": "date-time"
+        },
+        "provideAlternative": {
+          "description": "An indicator which when the value is \"true\" means that alternative solutions should be provided.",
+              "type": "boolean"
+        },
+        "provideOnlyAvailable": {
+          "description": "An indicator which when the value is \"true\" means that only available product offering must be listed in the response.",
+              "type": "boolean"
+        },
+        "provideUnavailabilityReason": {
+          "description": "An indicator which when the value is \"true\" means that unavailability reason are expected for non available product offering.",
+              "type": "string"
+        },
+        "@baseType": {
+          "description": "Indicates the base type of the resource. Here can be 'ProductOfferingQualification'.",
+              "type": "string"
+        },
+        "@type": {
+          "description": "Indicates the type of resource. Here can be 'ProductOfferingQualification'.",
+              "type": "string"
+        },
+        "@schemaLocation": {
+          "description": "Link to schema describing this REST resource",
+              "type": "string"
+        },
+        "relatedParty": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/RelatedPartyRef"
+          }
+        },
+        "channel": {
+          
+              "$ref": "#/definitions/ChannelRef"
+        },
+        "productOfferingQualificationItem": {
+          
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/POST_REQ_ProductOfferingQualificationItem"
+          }
+        }
+      }
+      
+    },
+
+    "Hub": {
+      "description": "An HUB resource is used by client side to subscribe to POQ notification(s).",
+
+      
+      "required": [
+          
+            "callback"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "identifier of the HUB subscription",
+              "type": "string"
+        },
+        "query": {
+          "description": "Used to specify notification type + additional parameters",
+              "type": "string"
+        },
+        "callback": {
+          "description": "This is the URL where server side must POST event when notification is triggered",
+              "type": "string"
+        }
+      }
+      
+    }
+  }
+}
+	
