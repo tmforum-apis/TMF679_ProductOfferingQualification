@@ -3,12 +3,8 @@
   "swagger": "2.0",
   "info": {
     "description": "Product Offering Qualification API is one of Pre-Ordering Management API Family. Product Offering Qualification API goal is to provide Product Offering commercial eligibility. This API allows to \n•\trequest a specific productOffering eligibility\n•\tlook for productOffering eligibles (ot not) from a product category\n•\tlook for productOffering eligibles (or not) from a productspec description.\nBecause the API allows describing product from the inventory, it is also possible to use it to retrieve productOffering available to complete existing product.",
-    "version": "2.0.0_inProgress",
-    "title": "API ProductOfferingQualification",
-    "x-logo": {
-      "url": "/redoc/logo.png",
-      "backgroundColor": "#FFFFFF"
-    }
+    "version": "1.0.0_",
+    "title": "API ProductOfferingQualification"
   },
   
   "host": "serverRoot",
